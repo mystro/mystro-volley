@@ -1,0 +1,17 @@
+<% content_for :subnav_pills do %>
+    <%= render "mystro_volley/common/breadcrumbs", project: @version.project, branch: @version.branch, version: @version %>
+<% end %>
+
+<h5>Files</h5>
+<table class="table table-condensed table-striped tablesorter {sortlist: [[1,0],[0,0]]}">
+  <thead>
+  <tr>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @version.files.each do |f| %>
+  <tr><td><%= f %></td></tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,5 @@
+<% content_for :subnav_pills do %>
+    <%= render "mystro_volley/common/breadcrumbs", project: @branch.project, branch: @branch, version: nil %>
+<% end %>
+
+<%= render "mystro_volley/versions/list", versions: @branch.versions.desc(:timestamp) %>

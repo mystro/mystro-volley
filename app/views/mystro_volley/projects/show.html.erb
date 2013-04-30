@@ -1,0 +1,5 @@
+<% content_for :subnav_pills do %>
+    <%= render "mystro_volley/common/breadcrumbs", project: @project, branch: nil, version: nil %>
+<% end %>
+
+<%= render "mystro_volley/branches/list", branches: @project.branches %>
