@@ -9,6 +9,8 @@ MystroVolley::Engine.routes.draw do
     match "/:project/:branch/:version", to: "home#show"
   end
 
+  #match "/__better_errors/:id/:thing" => main_app.root + "/__better_errors/%{id}/%{thing}"
+
   root to: "home#index"
 end
 

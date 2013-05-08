@@ -1,5 +1,7 @@
-#require_dependency "mystro_volley/application_controller"
+require_dependency "mystro_volley/application_controller"
 class MystroVolley::HomeController < ApplicationController
+  include MystroVolley::ApplicationHelper
+
   def index
     @myversions = MystroVolley::Version.desc(:timestamp).where(latest: true)
     render "mystro_volley/versions/index"
@@ -20,13 +22,13 @@ class MystroVolley::HomeController < ApplicationController
             if v
               @version = @branch.versions.where(name: v).first
               if @version
+                logger.info "VERSION: #{@version.class}"
                 return render "mystro_volley/versions/show"
               else
                 return render "mystro_volley/branches/show"
               end
             else
               return render "mystro_volley/branches/show"
-
             end
           else
             return render "mystro_volley/projects/show"

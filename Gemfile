@@ -15,3 +15,8 @@ gem "jquery-rails"
 
 # To use debugger
 # gem 'debugger'
+
+gem 'better_errors'
+gem 'binding_of_caller'
+
+gem 'mystro-common', path: "../common"

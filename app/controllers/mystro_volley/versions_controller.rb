@@ -1,4 +1,4 @@
-#require_dependency "mystro_volley/application_controller"
+require_dependency "mystro_volley/application_controller"
 
 module MystroVolley
   class VersionsController < ApplicationController
