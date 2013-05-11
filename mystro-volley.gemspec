@@ -19,5 +19,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.8"
   s.add_dependency "volley"
   s.add_dependency "mongoid"
+  s.add_dependency "mcollective-client"
   # s.add_dependency "jquery-rails"
 end

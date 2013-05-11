@@ -1,0 +1,32 @@
+
+<%= form_tag "/plugins/volley/versions/#{@version.id}/queue", id: "deploy_form", class: "form-horizontal" do %>
+    <div class="form-inputs">
+      <div class="control-group">
+        <label>&nbsp;</label>
+        <div class="controls">
+          Deploying <strong><%= @version %></strong>
+        </div>
+      </div>
+      <div class="control-group select required">
+        <label class="select required control-label" for="environment_template"><abbr title="required">*</abbr> Environment</label>
+        <div class="controls">
+          <%= select_tag(:environment, options_from_collection_for_select(Environment.for_account(current_user.account), 'id', 'name')) %>
+        </div>
+      </div>
+      <div class="control-group select required">
+        <label class="select required control-label" for="environment_template"><abbr title="required">*</abbr> Role</label>
+        <div class="controls">
+          <%= select_tag(:role, options_from_collection_for_select(Role.deployable.all, 'id', 'name')) %>
+        </div>
+      </div>
+      <div class="control-group boolean optional">
+        <label class="boolean optional control-label" for="environment_protected">Force</label>
+        <div class="controls">
+          <!--<input name= type="hidden" value="0"><label class="checkbox"><input class="boolean optional" id="environment_protected" name="environment[protected]" type="checkbox" value="1"></label>-->
+          <%= check_box_tag(:force) %>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+

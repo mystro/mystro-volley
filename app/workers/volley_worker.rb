@@ -4,8 +4,10 @@ class VolleyWorker
 
   class << self
     def perform(options={ })
-      job = Jobs::Volley::Update.create!
-      job.enqueue
+      vu = Jobs::Volley::Update.create!
+      vu.enqueue
+      vm = Jobs::Volley::Meta.create!
+      vm.enqueue
     rescue => e
       logger.error e.message
       logger.error e

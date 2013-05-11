@@ -23,6 +23,24 @@ module MystroVolley
         format.json { render json: @version }
       end
     end
+
+    # GET /versions/1/deploy
+    def deploy
+      @version = Version.find(params[:id])
+      render "deploy", layout: false
+    end
+
+    # POST /versions/1/queue
+    def queue
+      @version = Version.find(params[:id])
+      @environment = Environment.find(params[:environment])
+      @role = Role.find(params[:role])
+      j = Jobs::Volley::Deploy.create(data: {version: @version.to_s, environment: @environment.name, account: current_user.account, force: params[:force] == 1, role: @role.name})
+      j.enqueue
+      render status: :ok, json: {errors: false}
+    rescue => e
+      render status: :bad_request, json: {errors: true, message: e.message}
+    end
   
     ## GET /versions/new
     ## GET /versions/new.json

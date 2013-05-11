@@ -1,7 +1,10 @@
 MystroVolley::Engine.routes.draw do
   resources :projects
   resources :branches
-  resources :versions
+  resources :versions do
+    get "deploy", on: :member
+    post "queue", on: :member
+  end
 
   constraints(project: /[\w\d\.]+/,branch: /[\w\d\.]+/,version: /[\w\d\.]+/) do
     match "/:project", to: "home#show"

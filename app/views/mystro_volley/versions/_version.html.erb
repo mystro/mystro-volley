@@ -1,9 +1,11 @@
 <tr>
-  <td><%= link_to version.to_s, version_path(version) %></td>
+  <td><%= link_to version.to_s, mystro_volley.version_path(version) %></td>
   <td><%= version.timestamp %></td>
   <td><%= version.files.count %></td>
   <td><%= version.latest %></td>
   <td class="links">
-    <%= render "common/links", :obj => version, :edit => edit_version_path(version) %>
+    <%= link_to "#", class: "btn btn-mini deploy", data: {url: "/plugins/volley/versions/#{version.id}/deploy"} do %>
+        <i class="icon-share"></i>
+    <% end %>
   </td>
 </tr>

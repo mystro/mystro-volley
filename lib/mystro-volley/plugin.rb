@@ -27,4 +27,3 @@ module Mystro
     end
   end
 end
-
