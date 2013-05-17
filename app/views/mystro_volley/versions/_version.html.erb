@@ -1,11 +1,14 @@
 <tr>
   <td><%= link_to version.to_s, mystro_volley.version_path(version) %></td>
-  <td><%= version.timestamp %></td>
+  <td><%= distance_of_time_in_words_to_now(version.timestamp) %></td>
   <td><%= version.files.count %></td>
   <td><%= version.latest %></td>
   <td class="links">
-    <%= link_to "#", class: "btn btn-mini deploy", data: {url: "/plugins/volley/versions/#{version.id}/deploy"} do %>
+    <%= link_to "#", class: "btn btn-mini volley-deploy", data: {url: "/plugins/volley/versions/#{version.id}/deploy"} do %>
         <i class="icon-share"></i>
+    <% end %>                                                                                                                          <!-- , method: :delete, confirm: "Are you sure you wish to remove #{version.to_s}?" -->
+    <%= link_to "#", class: "btn btn-mini btn-danger delete_me", data: {id: version.id.to_s, type: "versions", base: "/plugins/volley"} do %>
+        <i class="icon-remove-sign"></i>
     <% end %>
   </td>
 </tr>

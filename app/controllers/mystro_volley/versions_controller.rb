@@ -20,7 +20,7 @@ module MystroVolley
   
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @version }
+        format.json { render json: @version.files.map {|e| {name: e, _id:"blarg"}} }
       end
     end
 
@@ -94,8 +94,8 @@ module MystroVolley
     # DELETE /versions/1.json
     def destroy
       @version = Version.find(params[:id])
-      @version.destroy
-  
+      Jobs::Volley::Destroy::Version.create(data: {id: @version.id, class: "MystroVolley::Version"}).enqueue
+
       respond_to do |format|
         format.html { redirect_to versions_url }
         format.json { head :no_content }

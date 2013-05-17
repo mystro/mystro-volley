@@ -1,3 +1,8 @@
 <tr>
   <td><%= link_to project.name, project_path(project) %></td>
+  <td class="links">
+    <%= link_to "#", class: "btn btn-mini btn-danger delete_me", data: {id: project.id.to_s, type: "projects", base: "/plugins/volley"} do %>
+        <i class="icon-remove-sign"></i>
+    <% end %>
+  </td>
 </tr>

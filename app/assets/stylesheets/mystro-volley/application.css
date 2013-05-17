@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+div.mv-view.tabbable.tabs-left > ul.nav.nav-tabs {
+    width: 260px;
+}

@@ -20,7 +20,7 @@ module MystroVolley
   
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @project }
+        format.json { render json: @project.branches }
       end
     end
   
@@ -76,7 +76,7 @@ module MystroVolley
     # DELETE /projects/1.json
     def destroy
       @project = Project.find(params[:id])
-      @project.destroy
+      Jobs::Volley::Destroy::Project.create(data: {id: @project.id, class: "MystroVolley::Project"}).enqueue
   
       respond_to do |format|
         format.html { redirect_to projects_url }

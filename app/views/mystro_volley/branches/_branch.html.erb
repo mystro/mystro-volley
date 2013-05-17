@@ -1,3 +1,8 @@
 <tr>
   <td><%= link_to branch.name, branch_path(branch) %></td>
+  <td class="links">
+  <%= link_to "#", class: "btn btn-mini btn-danger delete_me", data: {id: branch.id.to_s, type: "branches", base: "/plugins/volley"} do %>
+      <i class="icon-remove-sign"></i>
+  <% end %>
+  </td>
 </tr>

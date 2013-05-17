@@ -1,5 +1,4 @@
 require "mystro-common"
-
 require "volley"
 
 module Mystro
@@ -10,7 +9,11 @@ module Mystro
       register ui: "/plugins/volley",
                schedule: {
                    volley: "*/10 * * * *",
-               }
+               },
+               jobs: [
+                   "Jobs::Volley::Update",
+                   "Jobs::Volley::Meta"
+               ]
 
       class << self
         def configure

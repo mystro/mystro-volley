@@ -8,6 +8,7 @@ class Jobs::Volley::Base < Job
   end
 
   def publisher
+    init
     ::Volley::Dsl.publisher
   end
 end

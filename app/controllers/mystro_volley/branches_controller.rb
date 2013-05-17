@@ -20,7 +20,7 @@ module MystroVolley
   
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @branch }
+        format.json { render json: @branch.versions }
       end
     end
 
@@ -76,7 +76,7 @@ module MystroVolley
     # DELETE /branches/1.json
     def destroy
       @branch = Branch.find(params[:id])
-      @branch.destroy
+      Jobs::Volley::Destroy::Branch.create(data: {id: @branch.id, class: "MystroVolley::Branch"}).enqueue
   
       respond_to do |format|
         format.html { redirect_to branches_url }

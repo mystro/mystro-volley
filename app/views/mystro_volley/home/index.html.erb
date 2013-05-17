@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="span3">
+    <div id="mv-projects" class="mv-view tabbable tabs-left">
+      <ul class="nav nav-tabs">
+        <% @projects.each do |p| %>
+            <li id="project-<%= p.name %>" data-id="<%= p.id.to_s %>" data-type="projects" data-kids="branches" class="mv-tab-view">
+              <%= link_to p.name, "#" %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="span3">
+    <div id="mv-branches" class="mv-view tabbable tabs-left">
+      <ul id="mv-branches-content" class="nav nav-tabs">
+      </ul>
+    </div>
+  </div>
+  <div class="span3">
+    <div id="mv-versions" class="mv-view tabbable tabs-left">
+      <ul id="mv-versions-content" class="nav nav-tabs">
+      </ul>
+    </div>
+  </div>
+  <div class="span3">
+    <div id="mv-files" class="mv-view tabbable tabs-left">
+      <ul id="mv-files-content" class="nav nav-tabs">
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(function () {
+        $("#mv-projects .mv-tab-view:first").click();
+    })
+</script>
