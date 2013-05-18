@@ -1,0 +1,23 @@
+
+div.mv-view.tabbable.tabs-left > ul.nav.nav-tabs {
+  width: 260px;
+}
+
+
+.mv-view {
+  ul {
+    li {
+      height: 24px;
+      line-height: 20px;
+      list-style-type: none;
+      list-style-position: outside;
+    }
+    li.active {
+      list-style-type: square;
+      color: black;
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

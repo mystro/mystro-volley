@@ -61,14 +61,23 @@ $(function () {
         var id = $(this).attr("data-id");
         var type = $(this).attr("data-type");
         var kids = $(this).attr("data-kids");
+
         var heir = {"projects": "branches", "branches": "versions", "versions": "files"};
         var grandkids = heir[kids];
+
         console.log("tab view click:" + id);
+
         $("#mv-" + type + " .mv-tab-view").removeClass("active");
         $(this).addClass("active");
+
+        var thatid = id;
+        var thattype = type;
+
         $.get("/plugins/volley/" + type + "/" + id + ".json", function (d) {
             console.log("recieved " + kids);
             var h = "";
+//            if (!grandkids) {
+//            }
             for (var i in d) {
                 var n = d[i]["name"];
                 var id = d[i]["_id"];
@@ -80,7 +89,11 @@ $(function () {
                     h += "<li><a href='#'>" + n + "</a></li>";
                 }
             }
+            h += "<li></li>";
+            h += "<li><a href='/plugins/volley/"+thattype+"/"+thatid+"'>view</a></li>"
+//            h += "<li><a href='/plugins/volley/"+thattype+"/"+thatid+"'>destroy</a></li>"
             $("#mv-" + kids + "-content").html(h);
+            $("#mv-"+kids+"-content li:first").click();
         });
     });
 });
