@@ -50,16 +50,9 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    better_errors (0.8.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
-    binding_of_caller (0.7.1)
-      debug_inspector (>= 0.0.1)
     builder (3.0.4)
     clamp (0.6.1)
-    coderay (1.0.9)
     daemons (1.1.9)
-    debug_inspector (0.0.2)
     docopt (0.5.0)
     erubis (2.7.0)
     excon (0.22.1)
@@ -158,8 +151,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors
-  binding_of_caller
   jquery-rails
   mystro-common!
   mystro-volley!

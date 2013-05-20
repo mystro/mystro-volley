@@ -19,10 +19,12 @@ $(function () {
         console.log("deploy");
         var u = $(this).data("url");
         console.log("deploy: " + u);
+
         $.get(u)
             .done(function (d) {
                 $("#deploy_dialog_contents").html(d);
             });
+
         bootbox.dialog($("#deploy_dialog").html(), [
             {
                 "Cancel": function () {
