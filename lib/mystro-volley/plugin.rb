@@ -6,14 +6,20 @@ module Mystro
     module Volley
       include Mystro::Plugin::Base
 
-      register ui: "/plugins/volley",
-               schedule: {
-                   volley: "*/10 * * * *",
-               },
-               jobs: [
-                   "Jobs::Volley::Update",
-                   "Jobs::Volley::Meta"
-               ]
+      register(
+          ui:       {
+              latest:   "/plugins/volley",
+              browser:  "/plugins/volley/browser",
+              projects: "/plugins/volley/projects",
+          },
+          schedule: {
+              volley: "*/10 * * * *",
+          },
+          jobs:     [
+                        "Jobs::Volley::Update",
+                        "Jobs::Volley::Meta"
+                    ]
+      )
 
       class << self
         def configure
