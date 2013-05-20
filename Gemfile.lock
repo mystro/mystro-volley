@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mystro-volley (0.1.0.rc2)
+    mystro-volley (0.1.0.rc3)
       mcollective-client
       mongoid
       mystro-common (= 0.1.2)
