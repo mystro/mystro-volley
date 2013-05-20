@@ -6,7 +6,7 @@ unless defined?(Mystro::Volley::Version)
         MAJOR  = 0
         MINOR  = 1
         TINY   = 0
-        TAG    = "rc1"
+        TAG    = "rc2"
         STRING = [MAJOR, MINOR, TINY, TAG].compact.join('.')
       end
     end
