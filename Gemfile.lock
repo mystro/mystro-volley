@@ -1,4 +1,14 @@
 PATH
+  remote: .
+  specs:
+    mystro-volley (0.1.0.rc1)
+      mcollective-client
+      mongoid
+      mystro-common (= 0.1.2)
+      rails (~> 3.2.8)
+      volley
+
+PATH
   remote: ../common
   specs:
     mystro-common (0.1.2)
@@ -8,16 +18,6 @@ PATH
       hashie
       ipaddress
       yell (~> 1.2.0)
-
-PATH
-  remote: .
-  specs:
-    mystro-volley (0.1.0.rc1)
-      mcollective-client
-      mongoid
-      mystro-common (= 0.1.2)
-      rails (~> 3.2.8)
-      volley
 
 GEM
   remote: http://rubygems.org/
