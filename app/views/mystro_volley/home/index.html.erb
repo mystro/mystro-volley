@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span3">
     <div id="mv-projects" class="mv-view tabbable tabs-left">
-      <ul class="nav nav-tabs">
+      <ul class="">
         <% @projects.each do |p| %>
             <li id="project-<%= p.name %>" data-id="<%= p.id.to_s %>" data-type="projects" data-kids="branches" class="mv-tab-view">
               <%= link_to p.name, "#" %>
@@ -12,19 +12,19 @@
   </div>
   <div class="span3">
     <div id="mv-branches" class="mv-view tabbable tabs-left">
-      <ul id="mv-branches-content" class="nav nav-tabs">
+      <ul id="mv-branches-content" class="">
       </ul>
     </div>
   </div>
   <div class="span3">
     <div id="mv-versions" class="mv-view tabbable tabs-left">
-      <ul id="mv-versions-content" class="nav nav-tabs">
+      <ul id="mv-versions-content" class="">
       </ul>
     </div>
   </div>
   <div class="span3">
     <div id="mv-files" class="mv-view tabbable tabs-left">
-      <ul id="mv-files-content" class="nav nav-tabs">
+      <ul id="mv-files-content" class="">
       </ul>
     </div>
   </div>
