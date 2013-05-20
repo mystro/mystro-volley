@@ -1,5 +1,4 @@
 class VolleyWorker
-  extend Resque::Plugins::Logger
   @queue = :default
 
   class << self
