@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.add_dependency "volley"
   s.add_dependency "mongoid"
   s.add_dependency "mcollective-client"
+  s.add_dependency "mystro-common", "0.1.2"
   # s.add_dependency "jquery-rails"
 end
