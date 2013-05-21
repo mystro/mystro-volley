@@ -35,6 +35,7 @@ class Jobs::Volley::Deploy < Jobs::Volley::Mco
     begin
       list  = r.version(project: p)
       total = count = list.count
+
       list.each do |o|
         rsp        = o.results
         raise "error with host: #{rsp[:sender]}" unless rsp[:data] && rsp[:data][:version]
@@ -44,13 +45,16 @@ class Jobs::Volley::Deploy < Jobs::Volley::Mco
         count -= 1 if v == found
       end
 
-      info "waiting on #{count} of #{total}"
+      info "waiting on #{count} of #{total}: (timer: #{timer} <= #{timeout})"
 
-      timer += 5
-      sleep 5 if count > 0
+      if count > 0
+        timer += 5
+        sleep 5
+        self.save
+      end
     end while count > 0 && timer <= timeout
 
-    raise "deployment failed" if count > 0 || timer > timeout
+    raise "deployment failed: count:#{count} timer:#{timer}" if count > 0 || timer > timeout
 
     true
   end
