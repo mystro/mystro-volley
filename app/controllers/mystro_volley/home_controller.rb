@@ -5,7 +5,6 @@ class MystroVolley::HomeController < ApplicationController
   def index
     #@projects = MystroVolley::Project.all
     @myversions = MystroVolley::Version.desc(:timestamp).where(latest: true)
-    render "mystro_volley/versions/index"
   end
 
   def browser

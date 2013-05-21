@@ -3,6 +3,7 @@
   <td><%= distance_of_time_in_words_to_now(version.timestamp) %></td>
   <td><%= version.files.count %></td>
   <td><%= version.latest %></td>
+  <% if defined?(showlinks) && showlinks == true %>
   <td class="links">
     <%= link_to "#", class: "btn btn-mini volley-deploy", data: {url: "/plugins/volley/versions/#{version.id}/deploy"} do %>
         <i class="icon-share"></i>
@@ -11,4 +12,5 @@
         <i class="icon-remove-sign"></i>
     <% end %>
   </td>
+  <% end %>
 </tr>
