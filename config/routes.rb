@@ -1,4 +1,6 @@
 MystroVolley::Engine.routes.draw do
+  match "browser" => "home#browser"
+
   resources :projects
   resources :branches
   resources :versions do

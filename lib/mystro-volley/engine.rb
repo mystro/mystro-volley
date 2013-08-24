@@ -9,9 +9,5 @@ module MystroVolley
     initializer "volley.autoload.paths" do |app|
       app.config.autoload_paths += Dir[root.join('app','models','{**}')]
     end
-
-    initializer "volley.better_errors" do |app|
-      BetterErrors.application_root = "/"
-    end
   end
 end

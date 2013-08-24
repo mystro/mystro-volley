@@ -6,10 +6,12 @@
     <th>Time</th>
     <th>Files</th>
     <th>Latest</th>
+    <% if defined?(showlinks) && showlinks == true %>
     <th></th>
+    <% end %>
   </tr>
   </thead>
   <tbody>
-  <%= render versions %>
+  <%= render versions, showlinks: true %>
   </tbody>
 </table>

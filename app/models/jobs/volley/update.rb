@@ -3,13 +3,13 @@ class Jobs::Volley::Update < Jobs::Volley::Base
     init
     projects = publisher.projects
     projects.each do |p|
-      info "* #{p}"
+      #info "* #{p}"
       project = MystroVolley::Project.find_or_create_by(name: p)
       publisher.branches(p).each do |b|
-        info "  * #{b}"
+        #info "  * #{b}"
         branch = MystroVolley::Branch.find_or_create_by(name: b, project_id: project.id)
         publisher.versions(p, b).each do |v|
-          info "    * #{v}"
+          #info "    * #{v}"
           o = publisher.version_data(p, b, v)
           d = {
               files: o[:contents],
