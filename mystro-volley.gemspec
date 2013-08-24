@@ -16,10 +16,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency "rails", "~> 3.2.11"
   s.add_dependency "volley"
   s.add_dependency "mongoid"
   s.add_dependency "mcollective-client"
-  s.add_dependency "mystro-common", "~> 0.1.4"
-  # s.add_dependency "jquery-rails"
+  s.add_dependency "mystro-common", "~> 0.1.6"
 end
