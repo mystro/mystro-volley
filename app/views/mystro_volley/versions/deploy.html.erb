@@ -10,7 +10,7 @@
       <div class="control-group select required">
         <label class="select required control-label" for="environment_template"><abbr title="required">*</abbr> Environment</label>
         <div class="controls">
-          <%= select_tag(:environment, options_from_collection_for_select(Environment.for_account(current_user.account), 'id', 'name')) %>
+          <%= select_tag(:environment, options_from_collection_for_select(Environment.for_organization(current_user.organization), 'id', 'name')) %>
         </div>
       </div>
       <div class="control-group select required">

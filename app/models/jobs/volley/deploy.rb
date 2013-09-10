@@ -7,13 +7,13 @@ class Jobs::Volley::Deploy < Jobs::Volley::Mco
 
     version     = d["version"]
     environment = d["environment"]
-    account     = d["account"]
+    organization     = d["organization"]
     role        = d["role"]
     force       = d["force"]
 
     r = rpcclient
 
-    ["mystro.environment=#{environment}", "mystro.account=#{account}", "mystro.role_#{role}=true"].each do |f|
+    ["mystro.environment=#{environment}", "mystro.organization=#{organization}", "mystro.role_#{role}=true"].each do |f|
       info "filter: #{f}"
       r.fact_filter f
     end

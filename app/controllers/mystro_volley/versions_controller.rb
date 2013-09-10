@@ -35,7 +35,7 @@ module MystroVolley
       @version = Version.find(params[:id])
       @environment = Environment.find(params[:environment])
       @role = Role.find(params[:role])
-      j = Jobs::Volley::Deploy.create(data: {version: @version.to_s, environment: @environment.name, account: current_user.account, force: params[:force] == 1, role: @role.name})
+      j = Jobs::Volley::Deploy.create(data: {version: @version.to_s, environment: @environment.name, organization: current_user.organization, force: params[:force] == 1, role: @role.name})
       j.enqueue
       render status: :ok, json: {errors: false}
     rescue => e
