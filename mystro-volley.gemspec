@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency "volley"
   s.add_dependency "mongoid"
   s.add_dependency "mcollective-client"
-  s.add_dependency "mystro-common", "~> 0.2.0"
+  s.add_dependency "mystro-common", "~> 0.3.0"
 end

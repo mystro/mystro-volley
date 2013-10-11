@@ -4,15 +4,16 @@ PATH
     mystro-volley (0.1.0)
       mcollective-client
       mongoid
-      mystro-common (~> 0.2.0)
+      mystro-common (~> 0.3.0)
       rails (~> 3.2.11)
       volley
 
 PATH
   remote: ../common
   specs:
-    mystro-common (0.2.0)
+    mystro-common (0.3.0)
       activesupport (= 3.2.14)
+      damsel (~> 0.1.0)
       erubis
       fog (~> 1.15.0)
       hashie
@@ -53,6 +54,7 @@ GEM
     builder (3.0.4)
     clamp (0.6.1)
     daemons (1.1.9)
+    damsel (0.1.0)
     docopt (0.5.0)
     erubis (2.7.0)
     excon (0.25.3)
@@ -82,13 +84,13 @@ GEM
       systemu
     mime-types (1.25)
     mini_portile (0.5.1)
-    mixlib-shellout (1.1.0)
+    mixlib-shellout (1.2.0)
     mongoid (3.1.4)
       activemodel (~> 3.2)
       moped (~> 1.4)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
-    moped (1.5.0)
+    moped (1.5.1)
     multi_json (1.8.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
